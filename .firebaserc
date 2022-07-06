@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tour-of-heroes-456b5": {
+      "hosting": {
+        "Tour-Of-Heroes": [
+          "tour-of-heroes-456b5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tour-of-heroes-456b5"
+  }
+}

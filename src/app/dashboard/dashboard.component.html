@@ -1,0 +1,14 @@
+<div class="container">
+  <a
+    mat-raised-button
+    color="primary"
+    routerLink="/detail/{{ hero.id }}"
+    *ngFor="let hero of heroes"
+    layout="row"
+  >
+    {{ hero.name }}
+  </a>
+</div>
+<br />
+
+<app-hero-search></app-hero-search>

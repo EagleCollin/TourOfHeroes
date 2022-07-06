@@ -1,0 +1,19 @@
+<div>
+  <mat-form-field>
+    <input
+      matNativeControl
+      #searchBox
+      id="search-box"
+      (input)="search(searchBox.value)"
+      placeholder="Hero Name"
+    />
+  </mat-form-field>
+
+  <mat-list>
+    <mat-list-item *ngFor="let hero of heroes$ | async">
+      <a routerLink="/detail/{{ hero.id }}">
+        {{ hero.name }}
+      </a>
+    </mat-list-item>
+  </mat-list>
+</div>
