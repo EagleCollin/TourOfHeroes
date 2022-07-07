@@ -26,6 +26,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -54,6 +55,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     MatInputModule,
     MatIconModule,
     MatToolbarModule,
+    MatMenuModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     HttpClientModule,
