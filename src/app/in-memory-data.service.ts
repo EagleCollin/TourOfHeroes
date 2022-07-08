@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { Hero } from './hero.model';
 
 @Injectable({
@@ -23,5 +25,5 @@ export class InMemoryDataService {
       : 11;
   }
 
-  constructor() {}
+  constructor(private store: AngularFirestore) {}
 }

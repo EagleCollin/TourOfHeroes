@@ -4,6 +4,7 @@ import { HEROES } from './mock-heroes';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { MessageService } from './message/message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -83,6 +84,7 @@ export class HeroService {
 
   constructor(
     private messageService: MessageService,
-    private http: HttpClient
+    private http: HttpClient,
+    private store: AngularFirestore
   ) {}
 }
