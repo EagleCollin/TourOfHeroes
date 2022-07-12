@@ -25,7 +25,14 @@ export class HeroesComponent implements OnInit {
   }
   // Firebase
   add(name: string) {
-    this.firebaseService.addHero(name);
+    const formattedName = name
+      .split(' ')
+      .map((string) => {
+        const newName = string.charAt(0).toUpperCase() + string.slice(1);
+        return newName;
+      })
+      .join(' ');
+    this.firebaseService.addHero(formattedName);
   }
 
   delete(hero: FbHero) {
