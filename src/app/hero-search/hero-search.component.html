@@ -4,15 +4,19 @@
       matNativeControl
       #searchBox
       id="search-box"
-      (input)="search(searchBox.value)"
+      (input)="search()"
+      [(ngModel)]="searchValue"
       placeholder="Hero Name"
     />
   </mat-form-field>
+  <!-- <button mat-raised-button color="accent" (click)="search(searchBox.value)">
+    Search
+  </button> -->
 
-  <mat-list>
-    <mat-list-item *ngFor="let hero of heroes$ | async">
-      <a routerLink="/detail/{{ hero.id }}">
-        {{ hero.name }}
+  <mat-list *ngIf="searchValue">
+    <mat-list-item *ngFor="let result of results | async">
+      <a routerLink="/detail/{{ result.id }}" mat-raised-button color="accent">
+        {{ result.name }}
       </a>
     </mat-list-item>
   </mat-list>

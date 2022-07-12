@@ -10,7 +10,7 @@
       [(ngModel)]="hero.name"
       placeholder="Hero name"
     />
-    <button mat-button color="primary" (click)="save()">
+    <button mat-button color="primary" (click)="save(hero.id, hero.name)">
       <mat-icon>save</mat-icon>
     </button>
   </mat-card>

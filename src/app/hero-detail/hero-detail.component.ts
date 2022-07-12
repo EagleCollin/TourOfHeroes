@@ -13,6 +13,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: FbHero;
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,13 +23,18 @@ export class HeroDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.hero = this.firebaseService.getHero('8oChGNWW2GroOYh4jcFq');
+    this.getHero();
+    this.firebaseService.selectedHero.subscribe((hero) => (this.hero = hero));
   }
 
-  // getHero(hero: FbHero) {
-  //   const id = this.route.snapshot.paramMap.get('id')
-  //   this.hero = this.firebaseService.getHero(id)
-  // }
+  getHero() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.firebaseService.getHero(id);
+  }
+
+  save(id: string, newName: string) {
+    this.firebaseService.updateHero(id, newName);
+  }
 
   // HTTP
 
@@ -37,9 +43,9 @@ export class HeroDetailComponent implements OnInit {
   //   this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
   // }
 
-  // goBack() {
-  //   this.location.back();
-  // }
+  goBack() {
+    this.location.back();
+  }
 
   // save() {
   //   if (this.hero) {

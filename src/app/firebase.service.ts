@@ -1,9 +1,10 @@
+import { query } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of, Subject, switchMap } from 'rxjs';
 import { FbHero } from './hero-firebase.model';
 import { MessageService } from './message/message.service';
 
@@ -16,6 +17,9 @@ export class FirebaseService {
   }
   private heroesCollection: AngularFirestoreCollection<FbHero>;
   heroes: Observable<FbHero[]>;
+  selectedHero: Observable<FbHero>;
+  searchQuery = new Subject<string>();
+  queryResult;
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -57,11 +61,34 @@ export class FirebaseService {
 
   getHero(id: string) {
     try {
-      const heroesQuery = this.heroesCollection.get().pipe();
-      const hero = heroesQuery;
-      return hero;
+      this.selectedHero = this.store.doc<FbHero>(`heroes/${id}`).valueChanges();
     } catch (e) {
       this.handleError(`Error fetching hero with id: ${id}`);
     }
+  }
+
+  updateHero(id: string, newName: string) {
+    try {
+      this.heroesCollection.doc(id).update({ name: newName });
+    } catch {
+      this.handleError(`Error updating name of hero with id: ${id}`);
+    }
+  }
+
+  searchHeroes(searchTerm): Observable<FbHero[]> {
+    return this.heroes.pipe(
+      map((heroes) => heroes.filter((hero) => hero.name === searchTerm))
+    );
+  }
+
+  searchHeroes2(searchTerm) {
+    this.store
+      .collection('heroes', (ref) =>
+        ref
+          .orderBy('name')
+          .startAt(searchTerm)
+          .endAt(searchTerm + '\uf8ff')
+      )
+      .valueChanges();
   }
 }
