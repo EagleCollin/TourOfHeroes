@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="center">
   <mat-form-field>
     <input
       matNativeControl
@@ -8,10 +8,11 @@
       placeholder="Hero Name"
     />
   </mat-form-field>
-  <!-- <button mat-raised-button color="accent" (click)="search(searchBox.value)">
+</div>
+<!-- <button mat-raised-button color="accent" (click)="search(searchBox.value)">
     Search
   </button> -->
-
+<div class="center">
   <mat-list *ngIf="searchValue">
     <mat-list-item *ngFor="let result of results | async">
       <a routerLink="/detail/{{ result.id }}" mat-raised-button color="accent">

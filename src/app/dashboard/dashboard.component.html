@@ -1,11 +1,13 @@
-<div>
-  <mat-grid-list cols="12" rowHeight="50px">
-    <mat-grid-tile *ngFor="let hero of heroes" colspan="{{ colNumber }}">
-      <a mat-raised-button color="primary" routerLink="/detail/{{ hero.id }}">
-        {{ hero.name }}
-      </a>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div class="center">
+  <a
+    mat-raised-button
+    color="primary"
+    *ngFor="let hero of heroes"
+    routerLink="/detail/{{ hero.id }}"
+    style="margin: 10px"
+  >
+    {{ hero.name }}
+  </a>
 </div>
 <br />
 
