@@ -11,6 +11,7 @@ import { HeroService } from '../hero.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: FbHero[] = [];
+  colNumber;
   constructor(
     private heroService: HeroService,
     private firebaseService: FirebaseService
@@ -21,6 +22,14 @@ export class DashboardComponent implements OnInit {
     //   .getHeroes()
     //   .subscribe((heroes) => (this.heroes = heroes.slice(1, 5)));
 
-    this.firebaseService.heroes.subscribe((heroes) => (this.heroes = heroes));
+    this.firebaseService.heroes.subscribe((heroes) => {
+      this.heroes = heroes;
+      if (this.heroes.length < 12) {
+        this.colNumber = Math.ceil(12 / this.heroes.length);
+        console.log(this.colNumber);
+      } else {
+        this.colNumber = Math.ceil(this.heroes.length / 12);
+      }
+    });
   }
 }

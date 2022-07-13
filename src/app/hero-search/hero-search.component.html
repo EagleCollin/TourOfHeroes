@@ -1,12 +1,10 @@
-<div>
-  <p>Search is case sensitive</p>
+<div class="grid-container">
   <mat-form-field>
     <input
       matNativeControl
       #searchBox
       id="search-box"
-      (input)="search()"
-      [(ngModel)]="searchValue"
+      (input)="nameFormat(searchBox.value)"
       placeholder="Hero Name"
     />
   </mat-form-field>

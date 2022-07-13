@@ -26,11 +26,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { DashboardNgComponent } from './dashboard-ng/dashboard-ng.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     MessageComponent,
     DashboardComponent,
     HeroSearchComponent,
+    DashboardNgComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,12 +59,15 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     MatInputModule,
     MatIconModule,
     MatToolbarModule,
+    LayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    MatGridListModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
