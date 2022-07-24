@@ -5,12 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyAYhpMWexYYIVdA7LTpwoqMY0-rvnsu-zU',
-    authDomain: 'tour-of-heroes-456b5.firebaseapp.com',
-    projectId: 'tour-of-heroes-456b5',
-    storageBucket: 'tour-of-heroes-456b5.appspot.com',
-    messagingSenderId: '872755835671',
-    appId: '1:872755835671:web:1eface9f804040865fbd52',
+    apiKey: 'AIzaSyCj9B8y06--mlXkVsPJFp7d36g97ZgSLIk',
+    authDomain: 'tour-of-heroes-795dd.firebaseapp.com',
+    databaseURL: 'https://tour-of-heroes-795dd-default-rtdb.firebaseio.com',
+    projectId: 'tour-of-heroes-795dd',
+    storageBucket: 'tour-of-heroes-795dd.appspot.com',
+    messagingSenderId: '713245765312',
+    appId: '1:713245765312:web:787d1792e98a43ebab0725',
+    measurementId: 'G-G7KCYKE6RQ',
   },
 };
 
