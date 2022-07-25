@@ -8,8 +8,8 @@ import {
   Subject,
   switchMap,
 } from 'rxjs';
-import { FirebaseService } from '../firebase.service';
-import { FbHero } from '../hero-firebase.model';
+import { FirebaseService } from '../shared/firebase.service';
+import { FbHero } from '../shared/hero-firebase.model';
 import { Hero } from '../hero.model';
 import { HeroService } from '../hero.service';
 

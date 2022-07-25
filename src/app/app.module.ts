@@ -32,10 +32,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { MessageComponent } from './message/message.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './shared/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { DashboardNgComponent } from './dashboard-ng/dashboard-ng.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { DashboardNgComponent } from './dashboard-ng/dashboard-ng.component';
     DashboardComponent,
     HeroSearchComponent,
     DashboardNgComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

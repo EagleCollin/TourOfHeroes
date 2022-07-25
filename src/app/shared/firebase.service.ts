@@ -6,7 +6,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { map, Observable, of, Subject, switchMap } from 'rxjs';
 import { FbHero } from './hero-firebase.model';
-import { MessageService } from './message/message.service';
+import { MessageService } from '../message/message.service';
 
 @Injectable({
   providedIn: 'root',

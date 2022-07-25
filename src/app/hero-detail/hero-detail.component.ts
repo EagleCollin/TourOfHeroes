@@ -1,8 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FirebaseService } from '../firebase.service';
-import { FbHero } from '../hero-firebase.model';
+import { FirebaseService } from '../shared/firebase.service';
+import { FbHero } from '../shared/hero-firebase.model';
 import { Hero } from '../hero.model';
 import { HeroService } from '../hero.service';
 
@@ -13,7 +13,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: FbHero;
-  id: string;
+  id?: string;
 
   constructor(
     private route: ActivatedRoute,
