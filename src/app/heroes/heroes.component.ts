@@ -25,6 +25,7 @@ export class HeroesComponent implements OnInit {
   }
   // Firebase
   add(name: string) {
+    const appId = this.heroes.length + 1;
     const formattedName = name
       .split(' ')
       .map((string) => {
@@ -32,7 +33,7 @@ export class HeroesComponent implements OnInit {
         return newName;
       })
       .join(' ');
-    this.firebaseService.addHero(formattedName);
+    this.firebaseService.addHero(formattedName, appId);
   }
 
   delete(hero: FbHero) {

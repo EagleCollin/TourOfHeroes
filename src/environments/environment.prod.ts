@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'AIzaSyAYhpMWexYYIVdA7LTpwoqMY0-rvnsu-zU',
-    authDomain: 'tour-of-heroes-456b5.firebaseapp.com',
-    projectId: 'tour-of-heroes-456b5',
-    storageBucket: 'tour-of-heroes-456b5.appspot.com',
-    messagingSenderId: '872755835671',
-    appId: '1:872755835671:web:1eface9f804040865fbd52',
+    projectId: 'tour-of-heroes-2-6ca80',
+    appId: '1:184384460381:web:cb6592f052c167fabedfb4',
+    storageBucket: 'tour-of-heroes-2-6ca80.appspot.com',
+    locationId: 'us-central',
+    apiKey: 'AIzaSyDCK5vRhIkmv6ePFLhPadrI7RN6uKYeyRQ',
+    authDomain: 'tour-of-heroes-2-6ca80.firebaseapp.com',
+    messagingSenderId: '184384460381',
   },
 };

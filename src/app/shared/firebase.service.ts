@@ -39,10 +39,10 @@ export class FirebaseService {
     this.heroes = this.heroesCollection.valueChanges({ idField: 'id' });
   }
 
-  addHero(name: string) {
+  addHero(name: string, appId: number) {
     try {
       const id = this.store.createId();
-      const hero: FbHero = { id, name };
+      const hero: FbHero = { id, name, appId };
       this.heroesCollection.doc(id).set(hero);
       this.log(`${name} created successfully`);
     } catch (e) {

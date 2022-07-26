@@ -36,7 +36,8 @@ import { AppRoutingModule } from './shared/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { DashboardNgComponent } from './dashboard-ng/dashboard-ng.component';
-import { AuthComponent } from './auth/auth.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,6 @@ import { AuthComponent } from './auth/auth.component';
     DashboardComponent,
     HeroSearchComponent,
     DashboardNgComponent,
-    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +72,8 @@ import { AuthComponent } from './auth/auth.component';
     }),
     MatGridListModule,
     MatMenuModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent],
