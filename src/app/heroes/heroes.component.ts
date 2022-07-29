@@ -24,7 +24,7 @@ export class HeroesComponent implements OnInit {
     this.firebaseService.heroes.subscribe((heroes) => (this.heroes = heroes));
   }
   // Firebase
-  add(name: string) {
+  add(name: string, race: string) {
     const appId = this.heroes.length + 1;
     const formattedName = name
       .split(' ')
@@ -33,7 +33,10 @@ export class HeroesComponent implements OnInit {
         return newName;
       })
       .join(' ');
-    this.firebaseService.addHero(formattedName, appId);
+    const newRace = race;
+    this.firebaseService.addHero(formattedName, appId, newRace);
+
+    console.log(formattedName, race);
   }
 
   delete(hero: FbHero) {

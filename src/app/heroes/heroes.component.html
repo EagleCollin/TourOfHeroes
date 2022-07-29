@@ -4,7 +4,19 @@
   <label for="new-hero">Hero name:</label>
   <input mat-input id="new-hero" #heroName />
 
-  <button mat-raised-button (click)="add(heroName.value)">Add Hero</button>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>Select your hero's race</mat-label>
+    <mat-select #raceSelect>
+      <mat-option>None</mat-option>
+      <mat-option value="Martian">Martian</mat-option>
+      <mat-option value="Plutonian">Plutonian</mat-option>
+      <mat-option value="Earthan">Earthan</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button (click)="add(heroName.value, raceSelect.value)">
+    Add Hero
+  </button>
 </mat-card>
 
 <mat-list>
@@ -18,7 +30,9 @@
       matBadgeColor="accent"
     >
       {{ hero.name }}
+      <span id="race">Race: {{ hero.race }}</span>
     </a>
+
     <button mat-raised-button (click)="delete(hero)">
       <mat-icon>delete</mat-icon>
     </button>

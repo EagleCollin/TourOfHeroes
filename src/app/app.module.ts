@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -30,6 +30,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './shared/app-routing.module';
@@ -52,6 +54,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
@@ -62,6 +65,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     MatInputModule,
     MatIconModule,
     MatToolbarModule,
+    MatSelectModule,
     LayoutModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -72,6 +76,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     }),
     MatGridListModule,
     MatMenuModule,
+    MatCheckboxModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],
