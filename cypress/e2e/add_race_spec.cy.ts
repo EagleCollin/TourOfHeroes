@@ -14,7 +14,8 @@ describe('add race spec', () => {
 
     cy.get('mat-list-item')
       .contains('Martian Man Eater')
-      .find('#race')
-      .should('have.value', 'Martian');
+      .within((hero) => {
+        cy.get('#race').should('have.text', 'Race: Martian');
+      });
   });
 });
